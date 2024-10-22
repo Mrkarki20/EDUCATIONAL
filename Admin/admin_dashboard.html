@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - Manage Resources</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        nav {
+            background-color: #333;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav h1 {
+            font-size: 24px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 26px;
+            font-weight: 500;
+        }
+
+        .upload-section {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 40px;
+        }
+
+        .upload-section div {
+            width: 30%;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .upload-section h3 {
+            margin-bottom: 15px;
+            font-size: 20px;
+            font-weight: 500;
+        }
+
+        .upload-section input[type="file"] {
+            margin-bottom: 10px;
+        }
+
+        .upload-section button {
+            background-color: #5cb85c;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .upload-section button:hover {
+            background-color: #4cae4c;
+        }
+
+        .file-list {
+            margin-top: 40px;
+        }
+
+        .file-list h3 {
+            margin-bottom: 20px;
+            font-size: 22px;
+        }
+
+        .file-list ul {
+            list-style-type: none;
+        }
+
+        .file-list li {
+            background-color: #f9f9f9;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .file-list li button {
+            background-color: #d9534f;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .file-list li button:hover {
+            background-color: #c9302c;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <h1>Admin Panel - Manage Resources</h1>
+    </nav>
+
+    <div class="container">
+        <h2>Upload and Manage Content</h2>
+
+        <!-- Upload Section -->
+        <div class="upload-section">
+            <!-- Upload Notes -->
+            <div>
+                <h3>Upload Notes</h3>
+                <form action="upload_notes.php" method="POST" enctype="multipart/form-data">
+                    <input type="file" name="notes_file" accept=".pdf,.docx,.txt" required>
+                    <br>
+                    <button type="submit">Upload Notes</button>
+                </form>
+            </div>
+
+            <!-- Upload Videos -->
+            <div>
+                <h3>Upload Videos</h3>
+                <form action="upload_videos.php" method="POST" enctype="multipart/form-data">
+                    <input type="file" name="video_file" accept="video/*" required>
+                    <br>
+                    <button type="submit">Upload Video</button>
+                </form>
+            </div>
+
+            <!-- Upload Question Papers -->
+            <div>
+                <h3>Upload Question Papers</h3>
+                <form action="upload_questions.php" method="POST" enctype="multipart/form-data">
+                    <input type="file" name="question_file" accept=".pdf,.docx" required>
+                    <br>
+                    <button type="submit">Upload Question Paper</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- File List Section -->
+        <div class="file-list">
+            <h3>Uploaded Files</h3>
+            <ul>
+                <!-- Dynamic PHP Code to List Uploaded Files -->
+                <li>
+                    File Name 1
+                    <button>Delete</button>
+                </li>
+                <li>
+                    File Name 2
+                    <button>Delete</button>
+                </li>
+                <li>
+                    File Name 3
+                    <button>Delete</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>
